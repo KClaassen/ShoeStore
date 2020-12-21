@@ -11,9 +11,18 @@
     <string name="instructions_textview1">Please click on the button below to enter the shoe Store, here you can find and add all your favorite shoes.</string>
     <string name="instructions_textview2">Use the "Add" on the buttom of the screen in the store to add a new shoe into the listing.</string>
     <string name="instructions_button">Go to ShoeStore</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="button_add">Add</string>
     <string name="welcome_button_text">Next</string>
     <string name="logout_menu">Logout</string>
+    <string name="enter_shoe_details">Please enter the details of your favourite shoe below and click \"save\" to add it to the list</string>
+    <string name="detail_label_shoe_name">Shoe Name:</string>
+    <string name="enter_shoe_name">Enter shoe name...</string>
+    <string name="detail_label_shoe_company">Company</string>
+    <string name="enter_company_name">Enter company name...</string>
+    <string name="detail_label_shoe_size">Size:</string>
+    <string name="enter_shoe_size">Enter size...</string>
+    <string name="detail_label_shoe_description">Description:</string>
+    <string name="enter_shoe_description">Description...</string>
+    <string name="cancel_button">CANCEL</string>
+    <string name="save_button">SAVE</string>
 </resources>
