@@ -19,21 +19,25 @@
         <TextView
             android:id="@+id/name_text_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{shoe.name}"/>
 
         <TextView
             android:id="@+id/companyItemTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{shoe.company}"/>
 
         <TextView
             android:id="@+id/sizeItemTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{shoe.size}"/>
 
         <TextView
             android:id="@+id/descriptionItemTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="@{shoe.description}"/>
     </LinearLayout>
 </layout>

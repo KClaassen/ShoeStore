@@ -1,19 +1,30 @@
 package com.udacity.shoestore.models
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class ShoeViewModel: ViewModel()     {
 
-    private val shoesList = mutableListOf<Shoe>()
+    //Empty list of shoes
+    private val shoeList = mutableListOf<String>()
 
-    private val _shoeItem = MutableLiveData<List<Shoe>>()
-    val shoeItem : LiveData<List<Shoe>>
+    //LiveData Object for the current shoe
+    private val _shoeItem = MutableLiveData<List<String>>()
+    val shoeItem : LiveData<List<String>>
         get() = _shoeItem
 
+
+    init {
+        _shoeItem.value = ""
+        Log.i("ShoeViewModel", "ShoeViewModel created!")
+        addShoe()
+    }
+
     fun addShoe(shoe: Shoe) {
-        shoesList.add(shoe)
-        _shoeItem.value = shoesList
+        shoeItem.value?.add(shoe)
+
+        Log.i("New Shoe Added")
     }
 }
