@@ -27,6 +27,7 @@ class ShoeListFragment : Fragment() {
             findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
         }
 
+        //Adding shoeItem to shoeListLayout view
         viewModel.shoeItem.observe(viewLifecycleOwner, Observer { shoeItem ->
             for (shoe in shoeItem) {
                 binding.shoeListLayout.addView()

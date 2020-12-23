@@ -23,7 +23,7 @@ class ShoeViewModel: ViewModel()     {
     }
 
     fun addShoe(shoe: Shoe) {
-        shoeItem.value?.get(Shoe)
+        shoeList.add(shoe)
 
         Log.i("New Shoe Added")
     }
