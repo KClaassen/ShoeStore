@@ -2,6 +2,7 @@ package com.udacity.shoestore
 
 import android.os.Bundle
 import android.view.*
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -28,7 +29,7 @@ class ShoeListFragment : Fragment() {
 
         viewModel.shoeItem.observe(viewLifecycleOwner, Observer { shoeItem ->
             for (shoe in shoeItem) {
-
+                binding.shoeListLayout.addView()
             }
         })
 

@@ -19,11 +19,11 @@ class ShoeViewModel: ViewModel()     {
     init {
         _shoeItem.value = ""
         Log.i("ShoeViewModel", "ShoeViewModel created!")
-        addShoe()
+        addShoe(Shoe)
     }
 
     fun addShoe(shoe: Shoe) {
-        shoeItem.value?.add(shoe)
+        shoeItem.value?.get(Shoe)
 
         Log.i("New Shoe Added")
     }
