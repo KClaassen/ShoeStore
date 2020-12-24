@@ -2,12 +2,15 @@ package com.udacity.shoestore
 
 import android.os.Bundle
 import android.view.*
-import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
+import com.udacity.shoestore.databinding.ShoeListItemBinding
+import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.models.ShoeViewModel
 
 class ShoeListFragment : Fragment() {
@@ -20,24 +23,46 @@ class ShoeListFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+        binding.lifecycleOwner = this
+        // ViewModel Assignment
+        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
-        setHasOptionsMenu(true)
+        fun addShoe(shoe: Shoe) {
+
+            val shoeBinding: ShoeListItemBinding = ShoeListItemBinding.inflate(layoutInflater, binding.shoeListLayout, true)
+            shoeBinding.shoe = shoe
+        }
+
+        viewModel.shoeList.observe(viewLifecycleOwner, Observer {shoeData ->
+            for (shoe in shoeData) {
+                //How to inflate the layout_item.xml
+                addShoe(shoe)
+            }
+        })
+
+
+//        // Inflate Item Rows to the LinearLayout from the SharedViewModel
+//        viewModel.shoeList.observe(viewLifecycleOwner, { shoeList ->
+//            for (shoe in shoeList){
+//                // inflate a new shoe row
+//                val view = DataBindingUtil.inflate<ShoeListItemBinding>(layoutInflater, R.layout.shoe_list_item, binding.shoeListLayout,true).apply {
+//                    this.shoe = shoe
+//                }
+//            }
+//        })
+
+
 
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
         }
 
-        //Adding shoeItem to shoeListLayout view
-        viewModel.shoeItem.observe(viewLifecycleOwner, Observer { shoeItem ->
-            for (shoe in shoeItem) {
-                binding.shoeListLayout.addView()
-            }
-        })
 
-
-
+        setHasOptionsMenu(true)
         return binding.root
     }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -56,3 +81,4 @@ class ShoeListFragment : Fragment() {
         findNavController().navigate(R.id.action_shoeListFragment_to_loginFragment)
     }
 }
+

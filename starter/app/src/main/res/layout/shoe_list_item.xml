@@ -31,8 +31,8 @@
         <TextView
             android:id="@+id/sizeItemTextView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{shoe.size}"/>
+            android:layout_height="wrap_content"/>
+            <!--android:text="@{shoe.size}"/>-->
 
         <TextView
             android:id="@+id/descriptionItemTextView"
