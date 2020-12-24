@@ -25,7 +25,7 @@ class ShoeDetailFragment : Fragment() {
             false)
 
         //use requiredActivity() to create activity level viewModel
-        shoeViewModel = ViewModelProvider(requireActivity()).get(shoeViewModel::class.java)
+        shoeViewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
 
         binding.shoeViewModel = shoeViewModel
         binding.shoe= Shoe("",0.0,"","")
