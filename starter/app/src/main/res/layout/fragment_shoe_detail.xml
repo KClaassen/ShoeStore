@@ -93,7 +93,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="@string/enter_shoe_size"
-            android:inputType="number"
+            android:inputType="numberDecimal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_label_shoe_size" />
 
@@ -118,7 +118,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/enter_shoe_description"
-            android:inputType="textMultiLine"
+            android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_label_shoe_description" />
 
