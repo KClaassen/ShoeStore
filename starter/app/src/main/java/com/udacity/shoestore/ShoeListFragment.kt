@@ -15,7 +15,7 @@ import com.udacity.shoestore.models.ShoeViewModel
 
 class ShoeListFragment : Fragment() {
 
-    private lateinit var viewModel: ShoeViewModel
+    private lateinit var shoeViewModel: ShoeViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +25,7 @@ class ShoeListFragment : Fragment() {
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         binding.lifecycleOwner = this
         // ViewModel Assignment
-        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
+        shoeViewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
         fun addShoe(shoe: Shoe) {
 
@@ -33,24 +33,12 @@ class ShoeListFragment : Fragment() {
             shoeBinding.shoe = shoe
         }
 
-        viewModel.shoeList.observe(viewLifecycleOwner, Observer {shoeData ->
-            for (shoe in shoeData) {
+        shoeViewModel.shoeList.observe(viewLifecycleOwner, Observer {shoeList ->
+            for (shoe in shoeList) {
                 //How to inflate the layout_item.xml
                 addShoe(shoe)
             }
         })
-
-
-//        // Inflate Item Rows to the LinearLayout from the SharedViewModel
-//        viewModel.shoeList.observe(viewLifecycleOwner, { shoeList ->
-//            for (shoe in shoeList){
-//                // inflate a new shoe row
-//                val view = DataBindingUtil.inflate<ShoeListItemBinding>(layoutInflater, R.layout.shoe_list_item, binding.shoeListLayout,true).apply {
-//                    this.shoe = shoe
-//                }
-//            }
-//        })
-
 
 
         binding.fab.setOnClickListener {
