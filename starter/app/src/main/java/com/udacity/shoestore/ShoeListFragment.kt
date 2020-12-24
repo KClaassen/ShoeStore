@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ShoeListItemBinding
@@ -40,7 +41,6 @@ class ShoeListFragment : Fragment() {
             }
         })
 
-
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.action_shoeListFragment_to_shoeDetailFragment)
         }
@@ -49,8 +49,6 @@ class ShoeListFragment : Fragment() {
         setHasOptionsMenu(true)
         return binding.root
     }
-
-
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)

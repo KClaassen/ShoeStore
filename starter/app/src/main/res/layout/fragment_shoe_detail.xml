@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <variable
+            name="shoe"
+            type="com.udacity.shoestore.models.Shoe" />
+
         <variable
             name="ShoeViewModel"
             type="com.udacity.shoestore.models.ShoeViewModel" />
@@ -139,10 +144,9 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/save_button"
-            android:onClick="@{() -> ShoeViewModel.addShoe()}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            android:onClick="@{(v) -> ShoeViewModel.addShoe(v,shoe)}"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
