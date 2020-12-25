@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
@@ -14,7 +15,8 @@ import com.udacity.shoestore.models.ShoeViewModel
 
 class ShoeDetailFragment : Fragment() {
 
-    private lateinit var shoeViewModel: ShoeViewModel
+    //private lateinit var shoeViewModel: ShoeViewModel
+    private val shoeViewModel: ShoeViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -24,12 +26,12 @@ class ShoeDetailFragment : Fragment() {
             container,
             false)
 
-        //use requiredActivity() to create activity level viewModel
-        shoeViewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
+//        //use requiredActivity() to create activity level viewModel
+//        shoeViewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
 
         binding.shoeViewModel = shoeViewModel
-        binding.shoe= Shoe("",0.0,"","")
-        //binding.setLifecycleOwner(this)
+        //binding.shoe= Shoe("",0.0,"","")
+        binding.lifecycleOwner = this
 
         binding.cancelButton.setOnClickListener { v: View ->
             v.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
