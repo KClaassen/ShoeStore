@@ -8,18 +8,18 @@ import androidx.navigation.findNavController
 
 class ShoeViewModel: ViewModel()     {
 
-    private val shoeName = MutableLiveData<String>()
-    private val shoeSize = MutableLiveData<String>()
-    private val shoeCompany = MutableLiveData<String>()
-    private val shoeDescription = MutableLiveData<String>()
-
-    var shoe: Shoe = Shoe("", 0.0, "", "", mutableListOf())
-        get() = field.apply {
-            name = shoeName.value!!
-            size = shoeSize.value?.toDouble() ?: 0.0
-            company = shoeCompany.value!!
-            description = shoeDescription.value!!
-        }
+//    private val shoeName = MutableLiveData<String>()
+//    private val shoeSize = MutableLiveData<String>()
+//    private val shoeCompany = MutableLiveData<String>()
+//    private val shoeDescription = MutableLiveData<String>()
+//
+//    var shoe: Shoe = Shoe("", 0.0, "", "", mutableListOf())
+//        get() = field.apply {
+//            name = shoeName.value!!
+//            size = shoeSize.value?.toDouble() ?: 0.0
+//            company = shoeCompany.value!!
+//            description = shoeDescription.value!!
+//        }
 
     //Create Live Data Object
     private var _shoeList = MutableLiveData<ArrayList<Shoe>>()
@@ -32,7 +32,7 @@ class ShoeViewModel: ViewModel()     {
     }
 
     init {
-        _shoeList.value = ArrayList()
+        //_shoeList.value = ArrayList()
     }
 
     fun navigateUp(v: View){

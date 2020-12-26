@@ -30,8 +30,8 @@ class ShoeDetailFragment : Fragment() {
 //        shoeViewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
 
         binding.shoeViewModel = shoeViewModel
-        //binding.shoe= Shoe("",0.0,"","")
-        binding.lifecycleOwner = this
+        binding.shoe= Shoe("",0.0,"","")
+        //binding.lifecycleOwner = this
 
         binding.cancelButton.setOnClickListener { v: View ->
             v.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
