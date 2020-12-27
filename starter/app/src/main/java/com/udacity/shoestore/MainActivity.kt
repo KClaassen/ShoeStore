@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.udacity.shoestore.databinding.ActivityMainBinding
 import kotlinx.android.synthetic.main.fragment_shoe_list.*
 
 class MainActivity : AppCompatActivity() {
@@ -18,10 +19,9 @@ class MainActivity : AppCompatActivity() {
         //NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration)
         val navController = findNavController(R.id.myNavHostFragment)
         val appBarConfiguration = AppBarConfiguration(navController.graph)
-        setOf(R.id.LoginFragment, R.id.welcomeFragment, R.id.instructionsFragment, R.id.shoeListFragment)
         setSupportActionBar(findViewById(R.id.toolbar))
         setupActionBarWithNavController(navController, appBarConfiguration)
-        
+
     }
 
 }
