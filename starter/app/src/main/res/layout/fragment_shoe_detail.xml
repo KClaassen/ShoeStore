@@ -14,6 +14,7 @@
             type="com.udacity.shoestore.models.ShoeViewModel" />
     </data>
 
+    <!--ContraintLayout used as it's easier to design and for adapting to screen changes-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,6 +51,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="@string/enter_shoe_name"
+            android:text="@={shoe.name}"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_label_shoe_name" />
@@ -74,6 +76,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="@string/enter_company_name"
+            android:text="@={shoe.company}"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_label_shoe_company" />
@@ -98,6 +101,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:hint="@string/enter_shoe_size"
+            android:text="@={`` + shoe.size}"
             android:inputType="numberDecimal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_label_shoe_size" />
@@ -123,6 +127,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/enter_shoe_description"
+            android:text="@={shoe.description}"
             android:inputType="textPersonName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_label_shoe_description" />

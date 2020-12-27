@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.models.Shoe
@@ -26,9 +25,6 @@ class ShoeDetailFragment : Fragment() {
             container,
             false)
 
-//        //use requiredActivity() to create activity level viewModel
-//        shoeViewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
-
         binding.shoeViewModel = shoeViewModel
         binding.shoe= Shoe("",0.0,"","")
         //binding.lifecycleOwner = this
@@ -36,11 +32,6 @@ class ShoeDetailFragment : Fragment() {
         binding.cancelButton.setOnClickListener { v: View ->
             v.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
         }
-
-//        binding.saveButton.setOnClickListener { v: View ->
-//            v.findNavController().navigate(R.id.action_shoeDetailFragment_to_shoeListFragment)
-//        }
-
 
         return binding.root
     }

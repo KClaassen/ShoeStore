@@ -28,22 +28,8 @@ class ShoeListFragment : Fragment() {
         val binding: FragmentShoeListBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
         binding.lifecycleOwner = this
 
-
-//        // ViewModel Assignment
-//        shoeViewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
-
-//        fun addShoe(shoe: Shoe) {
-//
-//            val shoeBinding: ShoeListItemBinding = ShoeListItemBinding.inflate(layoutInflater, binding.shoeListLayout, true)
-//            shoeBinding.shoe = shoe
-//        }
-
         shoeViewModel.shoeList.observe(viewLifecycleOwner, Observer {
             for (shoe in it) {
-//                //How to inflate the layout_item.xml
-//                val shoeBinding: ShoeListItemBinding = ShoeListItemBinding.inflate(layoutInflater, binding.shoeListLayout, true)
-//                shoeBinding.shoe = shoe
-                //addShoe(shoe)
                 DataBindingUtil.inflate<ShoeListItemBinding>(
                         layoutInflater,
                         R.layout.shoe_list_item,
